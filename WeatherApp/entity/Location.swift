@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import ObjectMapper
 
 class Location: Codable {
 
@@ -33,3 +34,32 @@ class Location: Codable {
     }
     
 }
+
+// MARK:- Login API
+struct WeatherHightlightRequest: Codable {
+    let lat: Double
+    let long: Double
+    let units: String 
+    
+}
+
+extension WeatherHightlightRequest: APIEndpoint {
+    
+    func endpoint() -> String {
+        return "weather"
+    }
+    
+    func getURLPerameters() -> String {
+        
+        return "&lat=\(lat)&lon=\(long)&units=\(units)"
+    }
+    
+    func dispatch(onSuccess successHandler: @escaping ((_: WeatherHighlights) -> Void), onFailure failureHandler: @escaping ((_: APIError?, _: Error) -> Void)) {
+        APIRequest.get(request: self, onSuccess: { (baseAPIResponse) in
+            successHandler(baseAPIResponse)
+        }) { (baseAPIError, error) in
+            failureHandler(baseAPIError, error)
+        }
+    }
+}
+

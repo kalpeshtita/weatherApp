@@ -1,0 +1,14 @@
+//
+//  Staging.xcconfig
+//  WeatherApp
+//
+//  Created by Kalpesh on 20/01/20.
+//  Copyright © 2020 Kalpesh. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+server_url          = api.openweathermap.org/data
+api_version         = 2.5
+protocol            = https
+api_key             = 33c9672a7c33b0d7587f4ecb485535ed

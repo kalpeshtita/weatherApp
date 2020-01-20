@@ -20,14 +20,13 @@ protocol CityListViewToPresenterProtocol: class{
     var view: CityListPresenterToViewProtocol? {get set}
     var interactor: CityListPresenterToInteractorProtocol? {get set}
     var router: CityListPresenterToRouterProtocol? {get set}
-    func startFetchingLocation()
-    func stopFetchingLocation()
+    func getWeatherHighlightsForCurrentLocation()
 
 }
 
 protocol CityListPresenterToViewProtocol: class{
     
-    func didRecievedLocation(currentLocation: Location)
+    func didRecieved(weatherHighlights: WeatherHighlights)
 }
 
 protocol CityListPresenterToRouterProtocol: class {
@@ -36,11 +35,10 @@ protocol CityListPresenterToRouterProtocol: class {
 
 protocol CityListPresenterToInteractorProtocol: class {
     var presenter:CityListInteractorToPresenterProtocol? {get set}
-    func startFetchingLoacation()
-    func stopFetchingLoacation()
+    func getWeatherHighlightsForCurrentLocation()
 }
 
 protocol CityListInteractorToPresenterProtocol: class {
-    func didRecievedLocation(currentLocation: Location)
+    func didRecieved(weatherHighlights: WeatherHighlights)
     
 }

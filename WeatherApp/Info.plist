@@ -47,5 +47,13 @@
 	<string>Weather app need to access your location to show wether of your city.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Weather app need to access your location to show wether of your city.</string>
+	<key>api_version</key>
+	<string>${api_version}</string>
+	<key>protocol</key>
+	<string>${protocol}</string>
+	<key>server_url</key>
+	<string>${server_url}</string>
+	<key>api_key</key>
+	<string>${api_key}</string>
 </dict>
 </plist>

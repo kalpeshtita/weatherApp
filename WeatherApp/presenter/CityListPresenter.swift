@@ -9,22 +9,19 @@
 import UIKit
 
 class CityListPresenter:CityListViewToPresenterProtocol,CityListInteractorToPresenterProtocol  {
-    
-    
-    
     var view: CityListPresenterToViewProtocol?
     var interactor: CityListPresenterToInteractorProtocol?
     var router: CityListPresenterToRouterProtocol?
     
-    func startFetchingLocation() {
-        interactor?.startFetchingLoacation()
+    
+    // MARK: override method from CityListViewToPresenterProtocol
+    func getWeatherHighlightsForCurrentLocation() {
+        interactor?.getWeatherHighlightsForCurrentLocation()
     }
     
-    func didRecievedLocation(currentLocation: Location) {
-        self.view?.didRecievedLocation(currentLocation: currentLocation)
+    // MARK: override method from CityListInteractorToPresenterProtocol
+    func didRecieved(weatherHighlights: WeatherHighlights) {
+        view?.didRecieved(weatherHighlights: weatherHighlights)
     }
-    
-    func stopFetchingLocation() {
-       
-    }
+
 }
