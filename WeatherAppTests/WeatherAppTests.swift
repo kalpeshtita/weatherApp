@@ -2,8 +2,8 @@
 //  WeatherAppTests.swift
 //  WeatherAppTests
 //
-//  Created by Apple on 18/01/20.
-//  Copyright © 2020 Apple. All rights reserved.
+//  Created by Kalpesh on 18/01/20.
+//  Copyright © 2020 Kalpesh. All rights reserved.
 //
 
 import XCTest
